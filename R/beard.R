@@ -29,19 +29,21 @@ beard <- function(input){
   
   year <- as.numeric(newdata$year)
   
-  prediction_type <- NA_character_
+  return(data.frame(prediction=2*year))
   
-  if (year > last_year) {
-    prediction_type <- 'FORECASTED'
-    yearstoforecast <- year-last_year
-    fc <- tail(as.numeric(forecast(beard_model, h=yearstoforecast)$mean),1)
-    point_pred <- (b-a)*exp(fc)/(1+exp(fc)) + a
-    result <- data.frame(year=year,prediction_type=prediction_type, prediction=point_pred)
-  } else {
-    prediction_type <- 'HISTORICAL'
-    point_pred <- y[which(as.numeric(dat[,1]) == year)]
-    result <- data.frame(year=year,prediction_type=prediction_type, prediction=point_pred)
-  }
-
-  return(result)
+#   prediction_type <- NA_character_
+#   
+#   if (year > last_year) {
+#     prediction_type <- 'FORECASTED'
+#     yearstoforecast <- year-last_year
+#     fc <- tail(as.numeric(forecast(beard_model, h=yearstoforecast)$mean),1)
+#     point_pred <- (b-a)*exp(fc)/(1+exp(fc)) + a
+#     result <- data.frame(year=year,prediction_type=prediction_type, prediction=point_pred)
+#   } else {
+#     prediction_type <- 'HISTORICAL'
+#     point_pred <- y[which(as.numeric(dat[,1]) == year)]
+#     result <- data.frame(year=year,prediction_type=prediction_type, prediction=point_pred)
+#   }
+# 
+#   return(result)
 }

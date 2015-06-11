@@ -10,7 +10,7 @@ This package illustrates how to deploy a model for remote scoring/prediction.
 
     # Score in R
     library(beard)
-    mydata <- data.frame(year=c(1915))
+    mydata <- data.frame(year=c(1890))
     beard(input = mydata)
 
     # Score remotely
