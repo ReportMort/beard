@@ -6,7 +6,7 @@ This package illustrates how to deploy a model for remote scoring/prediction.
 
     # Install in R
     library(devtools)
-    install_github("reportmort/beard")
+    install_github("ReportMort/beard")
 
     # Score in R
     library(beard)
