@@ -16,7 +16,7 @@ This package illustrates how to deploy a model for remote scoring/prediction.
     # Score remotely
     curl https://public.opencpu.org/ocpu/github/reportmort/beard/R/beard/json \
       -H "Content-Type: application/json" \
-      -d '{"input" : [ {"year":1913} ]}'
+      -d '{"input" : [ {"year":1914} ]}'
       
 The model is included in the `data` directory of the package, and was created
 using the [createmodel.R](https://github.com/reportmort/beard/blob/master/inst/beard/createmodel.R) script. It predicts in the early 20th century the prevelance of beards among men.
