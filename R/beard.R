@@ -9,11 +9,12 @@
 #'    mydata <- data.frame(year=c(1921))
 #'    beard(mydata)
 beard <- function(input){
+
   #input can either be csv file or data	
   newdata <- if(is.character(input) && file.exists(input)){
-    read.csv(input)
+    read.csv(input, stringsAsFactors=FALSE)
   } else {
-    as.data.frame(input)
+    as.data.frame(input, stringsAsFactors=FALSE)
   }
   stopifnot("year" %in% names(newdata))
   # only 1 year at a time
