@@ -1,0 +1,12 @@
+Package: beard
+Type: Package
+Title: Percent of Men With Beards Prediction Model
+Version: 0.0
+Date: 2015-06-10
+Author: Steven Mortimer
+Maintainer: Steven Mortimer <reportmort@gmail.com>
+Description: Model to predict in early 20th century the prevelance of beards among men
+License: MIT
+LazyData: false
+Depends: R (>= 3.0.2)
+Imports: forecast
