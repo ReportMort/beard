@@ -18,6 +18,15 @@ This package illustrates how to deploy a model for remote scoring/prediction.
       -H "Content-Type: application/json" \
       -d '{"input" : [ {"year":1914} ]}'
       
+    # Score using Vagrant and Virtualbox
+    # First setup virtual machine, copy package to it, ssh into it and install, and run curl against that machine
+    scp -P 2222 /cygdrive/c/users/steven.mortimer/documents/personal-github/beard_0.0.tar.gz vagrant@127.0.0.1:~/.
+    vagrant ssh
+    sudo R CMD INSTALL beard_0.0.tar.gz --library=/usr/local/lib/R/site-library
+    curl http://10.68.12.119/ocpu/library/beard/R/beard/json \
+      -H "Content-Type: application/json" \
+      -d '{"input" : [ {"year":1914} ]}'
+      
     # Score from R using RCurl
     library(RCurl)
     library(RJSONIO)
